@@ -16,7 +16,7 @@ const RestaurantInfoComponents = ({ restaurant = {} }) => {
     const ratingArray = Array.from(new Array(Math.floor(rating)));
     return (
         <View>
-            <RestaurantCard elevation={5}>
+            <RestaurantCard elevation={1}>
                 <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
                 <Info>
                     <Text variant="label" > {name}</Text>
