@@ -9,6 +9,7 @@ import { useFonts as useOswaldFonts, Oswald_400Regular } from '@expo-google-font
 import { useFonts as useLatoFonts, Lato_400Regular } from '@expo-google-fonts/lato';
 import { Text } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons'
+import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context';
 
 const Tab = createBottomTabNavigator();
 
@@ -59,15 +60,18 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Tab.Navigator
-            screenOptions={createScreenOptions}
-          >
-            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-            <Tab.Screen name="Map" component={Map} />
-            <Tab.Screen name="Settings" component={Settings} />
-          </Tab.Navigator>
-        </NavigationContainer>
+        <RestaurantsContextProvider>
+          <NavigationContainer>
+            <Tab.Navigator
+              screenOptions={createScreenOptions}
+            >
+              <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+              <Tab.Screen name="Map" component={Map} />
+              <Tab.Screen name="Settings" component={Settings} />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </RestaurantsContextProvider>
+
       </ThemeProvider>
 
       <ExpoStatusBar style='auto' />
