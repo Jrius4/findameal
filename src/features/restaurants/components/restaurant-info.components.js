@@ -9,9 +9,13 @@ import { Text } from '../../../components/typography/text.component';
 import { RatingRow, RestaurantCard, RestaurantCardCover, Icon, Info, Address, Section, SectionEnd, Open } from './restuarant-info-card.styles';
 
 const RestaurantInfoComponents = ({ restaurant = {} }) => {
+    console.log({ restaurant })
+
     const {
-        name = 'Some Restaurant', icon = 'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png', photos = ["https://www.foodiesfeed.com/wp-content/uploads/2023/05/juicy-cheeseburger.jpg", 'https://www.foodiesfeed.com/wp-content/uploads/2023/06/pouring-honey-on-pancakes.jpg', 'https://www.foodiesfeed.com/wp-content/uploads/2023/04/pouring-syrup-over-waffles-with-berries.jpg',], address = 'Julius Avenue', isOpenNow = true, rating = 4, isClosedTemporarily = true
-    } = restaurant;
+        name, icon = 'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png', photos = ["https://www.foodiesfeed.com/wp-content/uploads/2023/05/juicy-cheeseburger.jpg", 'https://www.foodiesfeed.com/wp-content/uploads/2023/06/pouring-honey-on-pancakes.jpg', 'https://www.foodiesfeed.com/wp-content/uploads/2023/04/pouring-syrup-over-waffles-with-berries.jpg',], address = 'Julius Avenue', isOpenNow = true, rating = 0, isClosedTemporarily = true
+    } = restaurant.item;
+
+
 
     const ratingArray = Array.from(new Array(Math.floor(rating)));
     return (
