@@ -7,27 +7,7 @@ import styled from 'styled-components';
 import SpacerComponent from '../../../components/spacer/spacer.component';
 import { SafeArea } from '../../../components/utility/safe-area.component';
 import { RestaurantsContext } from '../../../services/restaurants/restaurants.context';
-
-
-
-
-
-
-
-
-
-export const SearchContainer = styled.View`
-padding:  ${props => props.theme.space[4]};
-padding-bottom: ${props => props.theme.space[0]};
-margin-bottom:${props => props.theme.space[3]};
-background-color:  ${props => props.theme.colors.bg.primary};
-`;
-
-export const SearchComp = styled(Searchbar)`
-background-color:  ${props => props.theme.colors.bg.primary};
-font-family: ${props => props.theme.fonts.body};
-
-`;
+import { Search } from '../components/search.component';
 
 
 export const RestaurantList = styled.FlatList.attrs({
@@ -58,9 +38,7 @@ const RestaurantsScreen = () => {
                         </LoadingContainer>
                     )
                 }
-                <SearchContainer>
-                    <SearchComp elevation={5} placeholder='Search...' />
-                </SearchContainer>
+                <Search />
                 <RestaurantList
                     data={restaurants}
                     renderItem={(item) => {

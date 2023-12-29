@@ -11,6 +11,7 @@ import { Text } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context';
 import { LocationContextProvider } from './src/services/location/location.context';
+import AnalyticsScreen from './src/features/analytics/screens/analytics.screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,6 +28,10 @@ const TAB_ICON = {
     "0": 'ios-settings',
     "1": 'ios-settings-outline'
   },
+  Analytics: {
+    "0": 'pie-chart',
+    "1": 'pie-chart-outline'
+  }
 }
 
 
@@ -70,6 +75,7 @@ export default function App() {
                 <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
                 <Tab.Screen name="Map" component={Map} />
                 <Tab.Screen name="Settings" component={Settings} />
+                <Tab.Screen name="Analytics" component={AnalyticsScreen} />
               </Tab.Navigator>
             </NavigationContainer>
           </RestaurantsContextProvider>
